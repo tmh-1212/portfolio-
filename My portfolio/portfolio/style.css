@@ -1,0 +1,368 @@
+/* ===========================
+   Global Reset & Base Styles
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling when clicking nav links */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* ===========================
+   Navigation Bar
+   =========================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #1a1a2e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  z-index: 100;
+}
+
+.nav-logo {
+  color: #e94560;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #e94560;
+}
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* ===========================
+   Shared Section Styles
+   =========================== */
+.section {
+  padding: 80px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #1a1a2e;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+
+/* Underline accent below section titles */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #e94560;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ===========================
+   Home Section
+   =========================== */
+.home-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  max-width: 100%;
+  padding: 80px 40px;
+}
+
+.greeting {
+  color: #e94560;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.name {
+  font-size: 3.5rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #a8b2d8;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.tagline {
+  color: #8892b0;
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto 32px;
+}
+
+/* Profile photo in home section */
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;          /* Makes it a circle */
+  object-fit: cover;           /* Crops the image nicely */
+  border: 4px solid #e94560;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.3);
+}
+
+/* Call-to-action button */
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: #e94560;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #c73652;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   About Section
+   =========================== */
+.about-content {
+  background: #fff;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+.about-content p {
+  margin-bottom: 16px;
+  color: #555;
+  font-size: 1rem;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===========================
+   Skills Section
+   =========================== */
+.skills-section {
+  background-color: #eef1f7;
+  max-width: 100%;
+  padding: 80px 40px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: #1a1a2e;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.skill-card:hover {
+  background-color: #e94560;
+  transform: translateY(-3px);
+}
+
+/* ===========================
+   Projects Section
+   =========================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+}
+
+.project-card p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+/* Tech tags on project cards */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: #eef1f7;
+  color: #1a1a2e;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* "More projects coming soon" note */
+.coming-soon {
+  text-align: center;
+  margin-top: 36px;
+  color: #888;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* ===========================
+   Contact Section
+   =========================== */
+.contact-section {
+  background-color: #1a1a2e;
+  max-width: 100%;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.contact-section .section-title {
+  color: #fff;
+}
+
+.contact-section .section-title::after {
+  background-color: #e94560;
+}
+
+.contact-text {
+  color: #a8b2d8;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.contact-email {
+  display: inline-block;
+  color: #e94560;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border: 2px solid #e94560;
+  padding: 10px 28px;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-email:hover {
+  background-color: #e94560;
+  color: #fff;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.footer {
+  background-color: #12121f;
+  color: #555;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+}
+
+/* ===========================
+   Responsive — Mobile Styles
+   =========================== */
+@media (max-width: 768px) {
+  /* Show hamburger, hide nav links by default */
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a2e;
+    padding: 20px 40px;
+    gap: 16px;
+  }
+
+  /* Class toggled by JavaScript to show the menu */
+  .nav-links.open {
+    display: flex;
+  }
+
+  .name {
+    font-size: 2.4rem;
+  }
+
+  .section {
+    padding: 60px 24px;
+  }
+
+  .skills-section,
+  .contact-section {
+    padding: 60px 24px;
+  }
+}
