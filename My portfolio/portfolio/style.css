@@ -8,7 +8,7 @@
 }
 
 html {
-  scroll-behavior: smooth; /* Smooth scrolling when clicking nav links */
+  scroll-behavior: smooth; /* Smooth scroll when clicking nav links */
 }
 
 body {
@@ -52,12 +52,13 @@ body {
   transition: color 0.3s;
 }
 
+/* Highlight nav link on hover or when section is active */
 .nav-links a:hover,
 .nav-links a.active {
   color: #e94560;
 }
 
-/* Hamburger button — hidden on desktop */
+/* Hamburger button — hidden on desktop, shown on mobile */
 .hamburger {
   display: none;
   background: none;
@@ -76,6 +77,13 @@ body {
   margin: 0 auto;
 }
 
+/* Inner wrapper for full-width sections */
+.section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
 .section-title {
   font-size: 2rem;
   color: #1a1a2e;
@@ -84,7 +92,12 @@ body {
   position: relative;
 }
 
-/* Underline accent below section titles */
+/* Light variant for dark backgrounds */
+.section-title.light {
+  color: #fff;
+}
+
+/* Decorative underline below section titles */
 .section-title::after {
   content: '';
   display: block;
@@ -93,6 +106,27 @@ body {
   background-color: #e94560;
   margin: 10px auto 0;
   border-radius: 2px;
+}
+
+/* ===========================
+   Buttons
+   =========================== */
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: #e94560;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #c73652;
+  transform: translateY(-2px);
 }
 
 /* ===========================
@@ -105,8 +139,11 @@ body {
   justify-content: center;
   text-align: center;
   background: linear-gradient(135deg, #1a1a2e, #16213e);
-  max-width: 100%;
   padding: 80px 40px;
+}
+
+.home-content {
+  animation: fadeInUp 0.8s ease both; /* Entrance animation */
 }
 
 .greeting {
@@ -135,32 +172,18 @@ body {
   margin: 0 auto 32px;
 }
 
-/* Profile photo in home section */
-.profile-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;          /* Makes it a circle */
-  object-fit: cover;           /* Crops the image nicely */
-  border: 4px solid #e94560;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.3);
-}
-
-/* Call-to-action button */
-.btn {
-  display: inline-block;
-  padding: 12px 32px;
-  background-color: #e94560;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-  background-color: #c73652;
-  transform: translateY(-2px);
+/* ===========================
+   Fade-in animation
+   =========================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===========================
@@ -170,7 +193,7 @@ body {
   background: #fff;
   padding: 32px;
   border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
 }
 
 .about-content p {
@@ -188,8 +211,7 @@ body {
    =========================== */
 .skills-section {
   background-color: #eef1f7;
-  max-width: 100%;
-  padding: 80px 40px;
+  padding: 80px 0;
 }
 
 .skills-grid {
@@ -197,8 +219,6 @@ body {
   flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .skill-card {
@@ -210,8 +230,10 @@ body {
   font-weight: 500;
   letter-spacing: 0.5px;
   transition: background-color 0.3s, transform 0.2s;
+  cursor: default;
 }
 
+/* Hover effect on skill cards */
 .skill-card:hover {
   background-color: #e94560;
   transform: translateY(-3px);
@@ -230,13 +252,14 @@ body {
   background: #fff;
   border-radius: 10px;
   padding: 28px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* Lift effect on project card hover */
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .project-card h3 {
@@ -267,13 +290,11 @@ body {
   font-weight: 500;
 }
 
-/* "More projects coming soon" note */
 .coming-soon {
   text-align: center;
   margin-top: 36px;
   color: #888;
   font-style: italic;
-  font-size: 1rem;
 }
 
 /* ===========================
@@ -281,22 +302,13 @@ body {
    =========================== */
 .contact-section {
   background-color: #1a1a2e;
-  max-width: 100%;
-  padding: 80px 40px;
+  padding: 80px 0;
   text-align: center;
-}
-
-.contact-section .section-title {
-  color: #fff;
-}
-
-.contact-section .section-title::after {
-  background-color: #e94560;
 }
 
 .contact-text {
   color: #a8b2d8;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   font-size: 1rem;
 }
 
@@ -308,12 +320,55 @@ body {
   border: 2px solid #e94560;
   padding: 10px 28px;
   border-radius: 6px;
+  margin-bottom: 40px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .contact-email:hover {
   background-color: #e94560;
   color: #fff;
+}
+
+/* Contact form layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #2e2e4e;
+  border-radius: 6px;
+  background-color: #16213e;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+/* Highlight input on focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #e94560;
+}
+
+.contact-form textarea {
+  resize: vertical; /* Let user resize vertically only */
+}
+
+/* Success message — hidden by default */
+.form-success {
+  display: none;
+  color: #4caf50;
+  margin-top: 16px;
+  font-size: 0.95rem;
 }
 
 /* ===========================
@@ -328,14 +383,15 @@ body {
 }
 
 /* ===========================
-   Responsive — Mobile Styles
+   Responsive — Tablet & Mobile
    =========================== */
 @media (max-width: 768px) {
-  /* Show hamburger, hide nav links by default */
+  /* Show hamburger button on mobile */
   .hamburger {
     display: block;
   }
 
+  /* Hide nav links by default on mobile */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -348,7 +404,7 @@ body {
     gap: 16px;
   }
 
-  /* Class toggled by JavaScript to show the menu */
+  /* JS toggles this class to show the mobile menu */
   .nav-links.open {
     display: flex;
   }
@@ -361,8 +417,23 @@ body {
     padding: 60px 24px;
   }
 
+  .section-inner {
+    padding: 0 24px;
+  }
+
   .skills-section,
   .contact-section {
-    padding: 60px 24px;
+    padding: 60px 0;
   }
+
+  .navbar {
+    padding: 16px 24px;
+  }
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
 }
