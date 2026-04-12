@@ -1,135 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tesfamikael Hailu | CS Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tesfamikael Hailu | Full-Stack Developer</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- ===== Navigation Bar ===== -->
-  <nav class="navbar">
-    <div class="nav-logo">Tesfamikael H.</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <!-- Hamburger button shown on mobile -->
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">TH<span>.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
   </nav>
 
-  <!-- ===== Home Section ===== -->
-  <section id="home" class="home-section">
-    <div class="home-content">
-      <img src="C:\Users\hp\Pictures\Camera Roll\f25adebd-d3b6-4437-86a0-92ec3335da8d.jpg" alt="Profile Picture" class="profile-pic" />
-      <p class="greeting">Hi, I'm</p>
-      <h1 class="name">Tesfamikael Hailu</h1>
-      <h2 class="title">Computer Science Student</h2>
-      <p class="tagline">I am currently building my skills and projects in software development.</p>
-      <!-- Button scrolls to the Projects section -->
-      <a href="#projects" class="btn">View My Work</a>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-greeting fade-up">Hello, I'm</p>
+      <h1 class="hero-name fade-up">Tesfamikael Hailu</h1>
+      <h2 class="hero-title fade-up">Full-Stack Developer <span class="divider">|</span> Computer Science Student</h2>
+      <p class="hero-intro fade-up">
+        I build clean, functional web applications and love turning ideas into real-world software.
+        Currently a 3rd-year CS student based in Dilla, Ethiopia.
+      </p>
+      <div class="hero-buttons fade-up">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+        <a href="cv.pdf" class="btn btn-ghost" download><i class="fas fa-download"></i> Download CV</a>
+        <a href="cv.pdf" target="_blank" class="btn">View CV</a>
+      </div>
     </div>
+    <div class="hero-visual fade-up">
+      <div class="avatar-ring">
+        <div class="avatar-inner">
+            <img src="profile.jpg" alt="Profile Image">
+        </div>
+      </div>
+      <div class="floating-badge badge-1"><i class="fab fa-java"></i> Java</div>
+      <div class="floating-badge badge-2"><i class="fab fa-js"></i> JS</div>
+      <div class="floating-badge badge-3"><i class="fas fa-database"></i> MySQL</div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
   </section>
 
-  <!-- ===== About Section ===== -->
-  <section id="about" class="section">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-content">
-      <p>
-        Hey there! I'm a 3rd-year Computer Science student with a passion for learning and building things.
-        I enjoy solving problems and turning ideas into working software, even if they're small projects for now.
-      </p>
-      <p>
-        I'm currently focused on strengthening my fundamentals in programming and web development.
-        I work with languages like Java, C++, HTML, CSS, and JavaScript, and I manage my code using Git.
-      </p>
-      <p>
-        I believe every big project starts with a single line of code — and I'm just getting started.
-        I'm always open to learning, collaborating, and growing as a developer.
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== Skills Section ===== -->
-  <section id="skills" class="skills-section">
-    <div class="section-inner">
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">Java</div>
-        <div class="skill-card">C++</div>
-        <div class="skill-card">HTML</div>
-        <div class="skill-card">CSS</div>
-        <div class="skill-card">JavaScript</div>
-        <div class="skill-card">MySQL</div>
-        <div class="skill-card">Git</div>
-        <div class="skill-card">VS Code</div>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title reveal">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a <strong>3rd-year Computer Science student</strong> at Dilla University with a strong passion
+            for full-stack web development. I enjoy building applications that solve real problems and
+            deliver great user experiences.
+          </p>
+          <p>
+            My core skills include <strong>Java, JavaScript, MySQL, HTML, and CSS</strong>. I'm always
+            learning new technologies and looking for opportunities to apply my knowledge in real-world
+            projects and internships.
+          </p>
+          <div class="about-info">
+            <div class="info-item"><i class="fas fa-map-marker-alt"></i> Dilla, Ethiopia</div>
+            <div class="info-item"><i class="fas fa-envelope"></i> tesfamikaelhailu528@gmail.com</div>
+            <div class="info-item"><i class="fas fa-phone"></i> +251-967-455-828</div>
+            <div class="info-item"><i class="fab fa-github"></i>
+              <a href="https://github.com/tmh-1212" target="_blank" rel="noopener">github.com/tmh-1212</a>
+            </div>
+          </div>
+        </div>
+        <div class="about-languages reveal">
+          <h3>Languages</h3>
+          <div class="lang-item">
+            <span>Amharic</span>
+            <div class="lang-bar"><div class="lang-fill" style="width:95%"></div></div>
+            <span class="lang-level">Fluent</span>
+          </div>
+          <div class="lang-item">
+            <span>English</span>
+            <div class="lang-bar"><div class="lang-fill" style="width:65%"></div></div>
+            <span class="lang-level">Intermediate</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Projects Section ===== -->
-  <section id="projects" class="section">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects-grid">
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title reveal">Skills</h2>
+      <div class="skills-grid">
 
-      <!-- Project 1 -->
-      <article class="project-card">
-        <h3>To-Do List App</h3>
-        <p>A simple web app to manage daily tasks. You can add, complete, and delete tasks easily.</p>
-        <div class="project-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
+        <div class="skill-category reveal">
+          <h3><i class="fas fa-paint-brush"></i> Frontend</h3>
+          <div class="skill-item">
+            <div class="skill-label"><span>HTML</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>CSS</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>JavaScript</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
         </div>
-      </article>
 
-      <!-- Project 2 -->
-      <article class="project-card">
-        <h3>Calculator App</h3>
-        <p>A basic calculator for arithmetic operations including addition, subtraction, multiplication, and division.</p>
-        <div class="project-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
+        <div class="skill-category reveal">
+          <h3><i class="fas fa-server"></i> Backend</h3>
+          <div class="skill-item">
+            <div class="skill-label"><span>Java</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Node.js</span><span>50%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="50"></div></div>
+          </div>
         </div>
-      </article>
 
+        <div class="skill-category reveal">
+          <h3><i class="fas fa-database"></i> Database</h3>
+          <div class="skill-item">
+            <div class="skill-label"><span>MySQL</span><span>78%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3><i class="fas fa-tools"></i> Tools</h3>
+          <div class="tools-icons">
+            <div class="tool-chip"><i class="fab fa-git-alt"></i> Git</div>
+            <div class="tool-chip"><i class="fab fa-github"></i> GitHub</div>
+            <div class="tool-chip"><i class="fas fa-code"></i> VS Code</div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <p class="coming-soon">More projects coming soon...</p>
   </section>
 
-  <!-- ===== Contact Section ===== -->
-  <section id="contact" class="contact-section">
-    <div class="section-inner">
-      <h2 class="section-title light">Contact</h2>
-      <p class="contact-text">Feel free to reach out — I'd love to connect!</p>
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title reveal">Projects</h2>
+      <div class="projects-grid">
 
-      <!-- Email link -->
-      <a href="mailto:tesfamikaelhailu528@gmail.com" class="contact-email">tesfamikaelhailu528@gmail.com</a>
+        <div class="project-card reveal">
+          <div class="project-icon"><i class="fas fa-users"></i></div>
+          <h3>Student Management System</h3>
+          <p>A Java + MySQL application for managing student records with full CRUD operations. Handles enrollment, grades, and student data efficiently.</p>
+          <div class="project-tags">
+            <span>Java</span><span>MySQL</span><span>CRUD</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/tmh-1212" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
 
-      <!-- Simple contact form -->
-      <form class="contact-form" id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
+        <div class="project-card reveal">
+          <div class="project-icon"><i class="fas fa-book"></i></div>
+          <h3>Personal Diary Manager</h3>
+          <p>A Java desktop application to create, edit, and delete personal diary entries. Features a clean UI and local data persistence.</p>
+          <div class="project-tags">
+            <span>Java</span><span>Desktop App</span><span>File I/O</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/tmh-1212/-Personal-Diary-Manager-" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
 
-      <!-- Success message shown after form submit -->
-      <p class="form-success" id="formSuccess">Thanks for reaching out! I'll get back to you soon.</p>
+        <div class="project-card reveal">
+          <div class="project-icon"><i class="fas fa-globe"></i></div>
+          <h3>Portfolio Website</h3>
+          <p>This responsive personal portfolio built with HTML, CSS, and JavaScript. Features smooth animations, dark mode, and a clean modern design.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/tmh-1212" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- ===== Footer ===== -->
+  <!-- EDUCATION -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <h2 class="section-title reveal">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2022 – Present</span>
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p class="timeline-school"><i class="fas fa-university"></i> Dilla University</p>
+            <p>3rd Year Student · Focused on software engineering, algorithms, and full-stack development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GITHUB -->
+  <section class="section" id="github">
+    <div class="container">
+      <h2 class="section-title reveal">GitHub</h2>
+      <div class="github-card reveal">
+        <div class="github-avatar"><i class="fab fa-github"></i></div>
+        <div class="github-info">
+          <h3>tmh-1212</h3>
+          <p>Check out my repositories and open-source contributions on GitHub.</p>
+          <a href="https://github.com/tmh-1212" target="_blank" rel="noopener" class="btn btn-primary">
+            <i class="fab fa-github"></i> Visit GitHub Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Contact Me</h2>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Let's work together</h3>
+          <p>I'm open to internship opportunities, collaborations, and freelance projects. Feel free to reach out.</p>
+          <div class="contact-links">
+            <a href="mailto:tesfamikaelhailu528@gmail.com"><i class="fas fa-envelope"></i> tesfamikaelhailu528@gmail.com</a>
+            <a href="tel:+251967455828"><i class="fas fa-phone"></i> +251-967-455-828</a>
+            <a href="https://github.com/tmh-1212" target="_blank" rel="noopener"><i class="fab fa-github"></i> github.com/tmh-1212</a>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="footer">
-    <p>&copy; 2026 Tesfamikael Hailu</p>
+    <div class="container">
+      <p>© 2024 Tesfamikael Hailu · Built with HTML, CSS & JavaScript</p>
+      <div class="footer-links">
+        <a href="mailto:tesfamikaelhailu528@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/tmh-1212" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="tel:+251967455828" aria-label="Phone"><i class="fas fa-phone"></i></a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
