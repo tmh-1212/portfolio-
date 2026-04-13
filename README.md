@@ -12,7 +12,7 @@ I enjoy building clean, functional, and user-friendly applications that solve re
 
 🌐 Live Demo
 
-🔗 https://peaceful-marigold-04eb93.netlify.app
+🔗 🔗 Live Demo: https://peaceful-marigold-04eb93.netlify.app
 
 ⚙️ Tech Stack
 🎨 Frontend
