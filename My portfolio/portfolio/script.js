@@ -92,26 +92,41 @@ const skillObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.skill-category').forEach(el => skillObserver.observe(el));
 
-// ===== CONTACT FORM =====
+
+// ===== CONTACT FORM (EmailJS) =====
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', function(e) {
   e.preventDefault();
+
   const btn = contactForm.querySelector('button[type="submit"]');
   btn.disabled = true;
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-  // Simulate send (replace with real backend/EmailJS integration)
-  setTimeout(() => {
-    formStatus.textContent = 'Message sent! I\'ll get back to you soon.';
-    formStatus.style.color = '#16a34a';
+    emailjs.sendForm(
+  "service_q4qw8yf",
+  "template_2mti7ts",
+  this,
+  "Vz38ypdVDgtH8BOy2" // actual EmailJS public key
+)
+  
+  .then(() => {
+    formStatus.textContent = "✅ Message sent successfully!";
+    formStatus.style.color = "#16a34a";
     contactForm.reset();
+  })
+  .catch((error) => {
+    formStatus.textContent = "❌ Failed to send message.";
+    formStatus.style.color = "red";
+    console.error(error);
+  })
+  .finally(() => {
     btn.disabled = false;
     btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-    setTimeout(() => { formStatus.textContent = ''; }, 5000);
-  }, 1500);
+  });
 });
+
 
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('section[id]');
